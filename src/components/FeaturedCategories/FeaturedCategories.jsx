@@ -1,0 +1,121 @@
+import React from "react";
+import { Box, Typography, Container } from "@mui/material";
+import im1 from "../../assets/im1.png";
+import im2 from "../../assets/im2.png";
+import img3 from "../../assets/img3.png";
+import im4 from "../../assets/im4.png";
+import im5 from "../../assets/im5.png";
+import { useNavigate } from "react-router-dom";
+
+const categories = [
+  {
+    //title: "DINNER",
+    //highlight: "Date",
+    img: im1,
+    link: "/shirts",
+
+  },
+  {
+   // title: "WKND",
+   // highlight: "GETAWAY",
+    img: im2,
+    link: "/jeans",
+  },
+  {
+    //title: "SINGLES",
+    //highlight: "Club",
+    img: img3,
+     link: "/tshirts",
+  },
+  {
+    //title: "BRUNCH",
+    //highlight: "Date",
+    img: im4,
+    link: "/trousers",
+  },
+  {
+    //title: "MOVIE",
+    //highlight: "Date",
+    img: im5,
+    link: "/shirts",
+  },
+];
+
+const FeaturedCategories = () => {
+    const navigate = useNavigate();
+  return (
+    <Container
+  maxWidth="lg"
+  sx={{
+    mt: 3,
+    px: { xs: 2, md: 2 }  
+  }}
+>
+
+      <Typography
+        variant="h6"
+        sx={{ fontWeight: 600, mb: 3, textAlign: "center" }}
+      >
+        Featured Categories
+      </Typography>
+
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          overflowX: "auto",
+          scrollbarWidth: "none",
+            
+        }}
+      >
+        {categories.map((item, index) => (
+          <Box
+            key={index}
+             onClick={() => navigate(item.link)} 
+            sx={{
+              minWidth: "220px",
+              height: "325px",
+              //borderRadius: "12px",
+              backgroundImage: `url(${item.img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+              display: "flex",
+              alignItems: "flex-end",
+             // p: 2,
+              color: "#fff",
+              fontWeight: 700,
+              
+            }}
+          >
+            {/* Dark Overlay */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1))",
+                borderRadius: "12px",
+              }}
+            />
+
+            {/* Text */}
+            <Box sx={{ position: "relative", zIndex: 1 }}>
+              <Typography variant="h6" sx={{ lineHeight: 1 }}>
+                {item.title}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{ color: "red", fontWeight: 700 }}
+              >
+                {item.highlight}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
+      </Box>
+    </Container>
+  );
+};
+
+export default FeaturedCategories;
