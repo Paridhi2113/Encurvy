@@ -44,12 +44,12 @@ const categories = [
 const FeaturedCategories = () => {
     const navigate = useNavigate();
   return (
-    <Container
+<Container
   maxWidth={false}
   sx={{
-    maxWidth: "2500px",   // control your professional layout width
+    maxWidth: "2500px",
     margin: "0 auto",
-    px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 6 }
+    px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 6 },
   }}
 >
 

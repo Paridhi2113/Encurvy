@@ -19,19 +19,14 @@ const Home = () => {
       <FeaturedCategories />
 
       {/* ✅ CONTENT INSIDE CONTAINER */}
-    <Container
+   <Container
   maxWidth={false}
-  disableGutters
   sx={{
+    maxWidth: "2500px",
+    margin: "0 auto",
+    px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 6 },
     mt: 6,
     mb: 6,
-    px: {
-      xs: 2,
-      sm: 3,
-      md: 6,
-      lg: 10,
-      xl: 16, // controlled padding for 4K
-    },
   }}
 >
         <Box

@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Container, Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const PosterBanner = ({
@@ -9,7 +8,7 @@ const PosterBanner = ({
   buttonText,
   position = "left",
   link = "/",
-  radius = 4,
+  radius = 12,
 }) => {
   const navigate = useNavigate();
 
@@ -29,7 +28,6 @@ const PosterBanner = ({
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
         display: "flex",
         alignItems: "center",
       }}
@@ -91,9 +89,6 @@ const PosterBanner = ({
                 backgroundColor: "#333",
                 transform: "scale(1.05)",
                 boxShadow: "0px 5px 15px rgba(0,0,0,0.3)",
-              },
-              "&:active": {
-                transform: "scale(0.95)",
               },
             }}
           >
