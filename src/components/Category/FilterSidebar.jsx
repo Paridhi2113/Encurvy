@@ -27,7 +27,7 @@ const FilterSidebar = () => {
         width: 260,
         height: "calc(100vh - 110px)",
         position: "sticky",
-        top: 110,
+        top: 80,
         overflowY: "auto",
         px: 2,
         borderRight: "1px solid #ddd",

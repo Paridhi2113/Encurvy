@@ -3,7 +3,7 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";   
+import "swiper/css/pagination";
 
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -18,7 +18,7 @@ const HeroBanner = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   // ======================
-  // 📱 MOBILE VIEW
+  // 📱 MOBILE VIEW (Swiper)
   // ======================
   if (isMobile) {
     return (
@@ -28,23 +28,22 @@ const HeroBanner = () => {
           slidesPerView={1}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={true}
+          loop
           style={{ width: "100%" }}
         >
           {images.map((img, index) => (
-        <SwiperSlide key={index}>
-  <Box
-    component="img"
-    src={img}
-    alt={`banner-${index}`}
-    sx={{
-      width: "100%",
-      height: { xs: "80vh", sm: "90vh" },
-      objectFit: "cover",
-      objectPosition: "center",
-    }}
-  />
-</SwiperSlide>
+            <SwiperSlide key={index}>
+              <Box
+                component="img"
+                src={img}
+                alt={`banner-${index}`}
+                sx={{
+                  width: "100%",
+                  height: "100vh", // Full screen hero
+                  objectFit: "cover",
+                }}
+              />
+            </SwiperSlide>
           ))}
         </Swiper>
       </Box>
@@ -52,15 +51,14 @@ const HeroBanner = () => {
   }
 
   // ======================
-  // 💻 DESKTOP VIEW (NO CHANGE)
+  // 💻 DESKTOP VIEW (3 Images)
   // ======================
   return (
     <Box
       sx={{
         display: "flex",
-        // width: "100vw",
-        // height: "808px",
-        overflow: "hidden",
+        width: "100%",
+        minHeight: "100vh", // responsive height
       }}
     >
       {images.map((img, index) => (
@@ -71,8 +69,8 @@ const HeroBanner = () => {
           alt={`banner-${index}`}
           sx={{
             flex: 1,
-            height: "808px",
             width: "33.33%",
+            height: "100vh",
             objectFit: "cover",
           }}
         />

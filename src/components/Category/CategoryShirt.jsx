@@ -67,6 +67,8 @@ const CategoryShirt = () => {
           ml: { md: "300px" }, // push content right
           px: { xs: 2, md: 3 },
           py: 4,
+           maxWidth: "2500px",   // 👈 add this
+    margin: "0 auto", 
         }}
       >
         {/* ======= KEEP YOUR HEADING + SORT SECTION EXACTLY SAME HERE ======= */}
@@ -183,6 +185,7 @@ const CategoryShirt = () => {
               sm: "repeat(3, 1fr)",
               md: "repeat(4, 1fr)",
               lg: "repeat(5, 1fr)",
+               xl: "repeat(6, 1fr)",
             },
             gap: "10px",
             columnGap: "10px",

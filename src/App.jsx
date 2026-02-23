@@ -10,6 +10,7 @@ import CategoryTShirt from "./components/Category/CategoryTShirt";
 import CategoryTrousers from "./components/Category/CategoryTrousers";
 
 
+
 function App() {
   return (
     <CartProvider>

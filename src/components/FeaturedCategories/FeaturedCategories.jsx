@@ -45,49 +45,63 @@ const FeaturedCategories = () => {
     const navigate = useNavigate();
   return (
     <Container
-  maxWidth="lg"
+  maxWidth={false}
   sx={{
-    mt: 3,
-    px: { xs: 2, md: 2 }  
+    maxWidth: "2500px",   // control your professional layout width
+    margin: "0 auto",
+    px: { xs: 2, sm: 3, md: 4, lg: 4, xl: 6 }
   }}
 >
 
       <Typography
         variant="h6"
-        sx={{ fontWeight: 600, mb: 3, textAlign: "center" }}
+        sx={{ fontWeight: 600, mb: 3, textAlign: "center" ,mt:3}}
       >
         Featured Categories
       </Typography>
 
       <Box
-        sx={{
-          display: "flex",
-          gap: 2,
-          overflowX: "auto",
-          scrollbarWidth: "none",
-            
-        }}
-      >
+  sx={{
+    display: "flex",
+    gap: {
+      xs: 2,
+      sm: 2,
+      md: 2,
+      lg: 2,
+      xl: 3, // slightly more gap on 4K
+    },
+    overflowX: "auto",
+    scrollbarWidth: "none",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+  }}
+>
         {categories.map((item, index) => (
-          <Box
-            key={index}
-             onClick={() => navigate(item.link)} 
-            sx={{
-              minWidth: "220px",
-              height: "325px",
-              //borderRadius: "12px",
-              backgroundImage: `url(${item.img})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              position: "relative",
-              display: "flex",
-              alignItems: "flex-end",
-             // p: 2,
-              color: "#fff",
-              fontWeight: 700,
-              
-            }}
-          >
+       <Box
+  key={index}
+  onClick={() => navigate(item.link)}
+  sx={{
+    flex: "0 0 auto",
+   width: {
+  xs: "70%",
+  sm: "45%",
+  md: "30%",
+  lg: "calc((100% - 64px) / 5)",   // Perfect 5 cards at 1440px+
+  xl: "calc((100% - 80px) / 5)",   // Perfect spacing for 4K
+},
+    aspectRatio: "2 / 3",   // keeps same design ratio instead of fixed height
+    backgroundImage: `url(${item.img})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+    display: "flex",
+    alignItems: "flex-end",
+    color: "#fff",
+    fontWeight: 700,
+    cursor: "pointer",
+  }}
+>
             {/* Dark Overlay */}
             <Box
               sx={{
