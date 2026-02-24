@@ -76,14 +76,14 @@ textAlign: "center",
             variant="h3"
             fontWeight="bold"
             
-            sx={{ mb: 2,
+            sx={{ mb: 1,
                fontSize: { xs: "24px", sm: "34px", md: "50px" },
              }}
           >
             {title}
           </Typography>
 
-          <Typography variant="h6" sx={{ mb: 3,
+          <Typography variant="h6" sx={{ mb: 1,
              fontSize: { xs: "14px", sm: "18px" },
              opacity: 0.9,
            }}>
