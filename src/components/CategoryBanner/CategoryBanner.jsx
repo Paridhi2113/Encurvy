@@ -11,6 +11,20 @@ const PosterBanner = ({
   radius = 12,
 }) => {
   const navigate = useNavigate();
+  const justify =
+    position === "right"
+      ? "flex-end"
+      : position === "center"
+      ? "center"
+      : "flex-start";
+
+  const textAlign =
+    position === "right"
+      ? "right"
+      : position === "center"
+      ? "center"
+      : "left";
+
 
   return (
     <Box
@@ -29,9 +43,11 @@ const PosterBanner = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
-        alignItems: "center",
+        display: "flex",
+        alignItems: { xs: "flex-end", md: "center" },
       }}
     >
+       
       <Box
         sx={{
           width: "100%",
@@ -45,15 +61,18 @@ const PosterBanner = ({
           px: { xs: 2, sm: 4, md: 6 },
         }}
       >
-        <Box sx={{ maxWidth: 500, color: "#fff" }}>
+        <Box sx={{
+    maxWidth: { xs: 260, sm: 320, md: 380 },
+    color: "#fff",
+  }}>
           <Typography
             variant="h3"
             fontWeight="bold"
             sx={{
-              mb: 2,
+              mb: 1,
               fontSize: {
-                xs: "28px",
-                sm: "36px",
+                xs: "22px",
+                sm: "32px",
                 md: "48px",
               },
             }}
@@ -64,9 +83,9 @@ const PosterBanner = ({
           <Typography
             variant="h6"
             sx={{
-              mb: 3,
+             mb: 1,
               fontSize: {
-                xs: "14px",
+                xs: "12px",
                 sm: "16px",
                 md: "18px",
               },
@@ -81,9 +100,14 @@ const PosterBanner = ({
             sx={{
               backgroundColor: "#000",
               color: "#fff",
-              px: 4,
-              py: 1.5,
+              px: { xs: 3, sm: 4 },
+              py: { xs: 1, sm: 1.5 },
+              fontSize: { xs: "12px", sm: "14px" },
+              borderRadius: "25px",
+              textTransform: "uppercase",
+              letterSpacing: "1px",
               borderRadius: "30px",
+              mb: 2.5,
               transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "#333",

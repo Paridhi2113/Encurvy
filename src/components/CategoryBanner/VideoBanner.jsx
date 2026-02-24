@@ -29,6 +29,7 @@ const VideoBanner = ({
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       {/* 🔹 Background Video */}
@@ -48,12 +49,12 @@ const VideoBanner = ({
         }}
       />
 
-      {/* 🔹 Dark Overlay */}
-      <Box
+     <Box
         sx={{
           position: "absolute",
           inset: 0,
-          background: "rgba(0,0,0,0.4)",
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6))",
         }}
       />
 
@@ -74,12 +75,18 @@ textAlign: "center",
           <Typography
             variant="h3"
             fontWeight="bold"
-            sx={{ mb: 2 }}
+            
+            sx={{ mb: 2,
+               fontSize: { xs: "24px", sm: "34px", md: "50px" },
+             }}
           >
             {title}
           </Typography>
 
-          <Typography variant="h6" sx={{ mb: 3 }}>
+          <Typography variant="h6" sx={{ mb: 3,
+             fontSize: { xs: "14px", sm: "18px" },
+             opacity: 0.9,
+           }}>
             {subtitle}
           </Typography>
 
@@ -88,7 +95,11 @@ textAlign: "center",
             onClick={() => navigate(link)}
             sx={{
               backgroundColor: "#000",
-              borderRadius: "30px",
+                px: { xs: 3, sm: 4 },
+            py: { xs: 1, sm: 1.5 },
+             textTransform: "uppercase",
+            letterSpacing: "1px",
+              borderRadius: "25px",
               "&:hover": { backgroundColor: "#333" },
             }}
           >

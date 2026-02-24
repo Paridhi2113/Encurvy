@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import { Box, Container } from "@mui/material";
 import HeroBanner from "../components/HeroBanner/HeroBanner";
 import FeaturedCategories from "../components/FeaturedCategories/FeaturedCategories";
@@ -8,8 +9,8 @@ import bn1 from "../assets/bn1.png";
 import bn2 from "../assets/bn2.png";
 import bn3 from "../assets/bn3.png";
 import video from "../assets/video.mp4";
-
 const Home = () => {
+  
   return (
     <>
       {/* ✅ FULL WIDTH HERO */}
@@ -43,6 +44,7 @@ const Home = () => {
             buttonText="Shop Now"
             radius={8}
             link="/shirts"
+             position="left"
           />
 
           <PosterBanner
@@ -62,6 +64,7 @@ const Home = () => {
             buttonText="Shop Now"
             radius={5}
             link="/tshirts"
+             position="left"
           />
 
           <VideoBanner
