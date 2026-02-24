@@ -64,7 +64,7 @@ const Home = () => {
             buttonText="Shop Now"
             radius={5}
             link="/tshirts"
-             position="left"
+            
           />
 
           <VideoBanner

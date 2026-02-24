@@ -74,7 +74,10 @@ const PosterBanner = ({
                 xs: "22px",
                 sm: "32px",
                 md: "48px",
+             
               },
+               maxWidth: { xs: 220, sm: 300, md: 380 }, 
+              lineHeight: { xs: 1.1, md: 1.2 }, 
             }}
           >
             {title}

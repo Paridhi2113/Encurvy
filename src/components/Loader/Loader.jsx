@@ -1,12 +1,12 @@
 // Loader.js
 import React from "react";
 import "./Loader.css";
-import EncurvyLoder from '../../assets/EncurvyLoder.gif';
+import EncurvyL from '../../assets/EncurvyL.gif';
 
 const Loader = () => {
   return (
     <div className="loader-wrapper">
-      <img src={EncurvyLoder} alt="Escurvy Loader" className="logo-loader" />
+      <img src={EncurvyL} alt="Escurvy Loader" className="logo-loader" />
     </div>
   );
 };
